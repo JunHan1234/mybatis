@@ -18,7 +18,7 @@ public class Main {
 		if(mapper.insertUser2(13, "kianu", LocalDate.of(2023, 1, 27)) > 0)
 			System.out.println("성공13");
 		*/
-		if(mapper.insertUser3(14, "neo", LocalDate.of(2023, 1, 27)) > 0)
+		if(mapper.insertUser3(14, "neo", LocalDate.of(2023, 1, 27)) > 0)  /*return되는 row의 개수가 0보다 크면 실행.*/
 			System.out.println("성공14");
 	}
 }
