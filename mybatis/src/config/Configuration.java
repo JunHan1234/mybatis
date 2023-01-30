@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 public class Configuration {
 	private static SqlSessionFactory sqlSessionFactory;
 	
+	//static 이므로 byte code roading시 읽혀진다.
 	static {
 		try {
 			// xml문서의 객체화

@@ -9,6 +9,7 @@
 		where users.user_name = #{userName}
 		<!-- dynamic sql -->
 		<!-- if문 test에 조건문 기록. -->
+		<!-- if는 비 배타적이다. 반면, choose는 배타적이다. -->
 		<if test='post != null and post.title != null'>
 			and post_title like '%' || #{post.title} || '%'
 		</if>
