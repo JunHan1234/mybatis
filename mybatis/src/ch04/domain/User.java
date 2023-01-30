@@ -7,7 +7,7 @@ public class User {
 	private int userId;
 	private String userName;
 	private LocalDate regDate;
-	private List<Post> posts; //User has many posts.
+	private List<Post> posts; //User has a many posts. //many에선 List가 등장.
 	
 	public User(int userId, String userName, LocalDate regDate) {
 		this.userId = userId;

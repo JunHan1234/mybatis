@@ -8,12 +8,12 @@
 	
 	<typeAliases>
 		<typeAlias type='ch02.domain.User' alias='user'/>
-		<package name='ch03.domain'/> <!-- package로 별명 자동부여 -->
+		<package name='ch03.domain'/> <!-- 특정 package의 class명으로 별명 자동부여 -->
 	</typeAliases>
 	
 	<environments default='development'>
 		<environment id='development'>
-			<transactionManager type='JDBC'></transactionManager>
+			<transactionManager type='JDBC'/>
 			<dataSource type='POOLED'>
 				<property name='driver' value='${driver}'/>
 				<property name='url' value='${url}'/>

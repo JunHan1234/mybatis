@@ -2,9 +2,12 @@
 <!DOCTYPE mapper PUBLIC './/mybatis.org//DTD Mapper 3.0//EN'
 	'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
 <mapper namespace='ch02.ex02.Map'>
+	<!-- 4개의 객체를 기술한다. -->
 	<select id='selectUser' resultMap='userMap'>
 		select user_id, user_name, reg_date
 		from users
+		<!-- parameter의 표현 #{}, parameter name은 아무거나 적어도 되지만,
+			가독성을 위해 만들었던 method의 parameter명과 통일시킨다. -->
 		where user_id = #{userId}
 	</select>
 	
@@ -20,7 +23,7 @@
 		where reg_date = #{regDate}
 	</select>
 	
-	<resultMap id='userMap' type='user'>
+	<resultMap id='userMap' type='user'> <!-- user(ch02.domain.User의 별명) object과 연결한다. -->
 		<id property='userId' column='user_id'/> <!-- relation의 user_id field값을 읽어 넘김  -->
 		<result property='userName' column='user_name'/>
 		<result property='regDate' column='reg_date'/>

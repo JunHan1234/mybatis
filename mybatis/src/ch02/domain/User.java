@@ -2,6 +2,7 @@ package ch02.domain;
 
 import java.time.LocalDate;
 //jdbc가 아니라 mybatis는 LocalDate 사용가능.
+//User class가 ORMapping에 쓸 object이 된다.
 public class User {
 	private int userId;
 	private String userName;
@@ -12,20 +13,7 @@ public class User {
 		this.userName = userName;
 		this.regDate =regDate;
 	}
-	/*
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-	
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	
-	public void setRegDate(LocalDate regDate) {
-		this.regDate = regDate;
-	}
-	*/
-	
+
 	@Override
 	public String toString() {
 		return String.format("%d %s %s", userId, userName, regDate);
