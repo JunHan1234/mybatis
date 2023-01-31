@@ -1,6 +1,6 @@
 package config;
 
-import java.io.InputStream;
+import java.io.Reader;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -13,13 +13,12 @@ public class Configuration {
    //config패키지 보기엔 2개지만 실제론 1개 패키지임 
    static {
       try {
-//         Reader reader = Resources.getResourceAsReader("config/sqlMapConfig.xml");
-//         sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
-         InputStream stream = Resources.getResourceAsStream("config/sqlMapConfig.xml");
-         sqlSessionFactory = new SqlSessionFactoryBuilder().build(stream, "hr"); //environment hr
+         Reader reader = Resources.getResourceAsReader("config/sqlMapConfig.xml");
+         sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+         //InputStream stream = Resources.getResourceAsStream("config/sqlMapConfig.xml");
+         //sqlSessionFactory = new SqlSessionFactoryBuilder().build(stream, "hr"); //environment hr
       } catch(Exception e) {
          e.printStackTrace();
-         
       }
    }
    //mapper풀에는 mapper가 있는데 구분을 데이터타입으로 구분할것이고 arg타입의 매퍼를 골라내겠따.
@@ -29,6 +28,5 @@ public class Configuration {
       return sqlSessionFactory.openSession(true).getMapper(arg);//true auto commit하겠따.
       //true를 하면 자동commit인데 transaction이 짧을 때 주로쓰며
       //batch작업을 할때 보통 오래걸리므로 false를 쓴다.
-      
    }
 }
