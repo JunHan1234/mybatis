@@ -13,7 +13,7 @@
 	<select id='selectUsers2' resultMap='userMap'>
 		<include refid='selectUser'/>
 		where user_name in
-			<foreach item='userId' collection='list' open='(' separator=',' close=')'>
+			<foreach item='userName' collection='list' open='(' separator=',' close=')'>
 				#{userName}
 			</foreach>
 	</select>
